@@ -1,0 +1,72 @@
+/* ResultCard ─────────────────────────────────────────────────── */
+.result-card {
+  overflow: hidden;
+  padding: 0; /* padding is handled by inner elements */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card__banner {
+  padding: var(--space-xl);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.bg-gradient-normal     { background: var(--gradient-normal); }
+.bg-gradient-anxiety    { background: var(--gradient-anxiety); }
+.bg-gradient-depression { background: var(--gradient-depression); color: #fff; }
+.bg-gradient-burnout    { background: var(--gradient-burnout); }
+
+/* Make sure badges stand out against the colored background */
+.result-card__banner .badge {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 6px 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.result-card__condition {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  color: inherit;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-card__content {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.result-card__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--clr-text-secondary);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.result-card__treatment-text {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--clr-text-primary);
+  line-height: 1.6;
+}
+
+.result-card__meta {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}

@@ -1,0 +1,41 @@
+/* About ─────────────────────────────────────────────────── */
+.page-about {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  min-height: calc(100vh - 80px);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto var(--space-4xl);
+}
+
+.about-text {
+  padding: var(--space-2xl);
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-md);
+}
+
+.about-text p {
+  color: var(--clr-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.about-text ul {
+  color: var(--clr-text-primary);
+  margin-left: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.about-text li {
+  margin-bottom: var(--space-sm);
+}
+
+.about-metrics {
+  margin-top: var(--space-4xl);
+}

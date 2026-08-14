@@ -1,0 +1,43 @@
+/* StatisticsCard ─────────────────────────────────────────────────── */
+.stat-card {
+  padding: var(--space-xl);
+}
+
+.stat-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--clr-text-contrast);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.stat-card__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  background: var(--glass-bg);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+}
+
+.stat-item__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-item__value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--clr-text-primary);
+}

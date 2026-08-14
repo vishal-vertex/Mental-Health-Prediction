@@ -1,0 +1,26 @@
+/* NotFound ─────────────────────────────────────────────────── */
+.page-404 {
+  min-height: calc(100vh - 80px - 200px);
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+.error-code {
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.error-title {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+.error-desc {
+  color: var(--clr-text-secondary);
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto var(--space-xl);
+}
+
+.mt-4 { margin-top: var(--space-lg); }

@@ -1,0 +1,217 @@
+{
+  "condition": {
+    "accuracy": 92.0,
+    "precision": 92.17,
+    "recall": 92.0,
+    "f1_score": 91.97,
+    "confusion_matrix": [
+      [
+        21,
+        2,
+        2,
+        0
+      ],
+      [
+        1,
+        24,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        22,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        25
+      ]
+    ],
+    "labels": [
+      "Anxiety",
+      "Burnout",
+      "Depression",
+      "Normal"
+    ],
+    "classification_report": {
+      "Anxiety": {
+        "precision": 0.9130434782608695,
+        "recall": 0.84,
+        "f1-score": 0.875,
+        "support": 25.0
+      },
+      "Burnout": {
+        "precision": 0.8571428571428571,
+        "recall": 0.96,
+        "f1-score": 0.9056603773584906,
+        "support": 25.0
+      },
+      "Depression": {
+        "precision": 0.9166666666666666,
+        "recall": 0.88,
+        "f1-score": 0.8979591836734694,
+        "support": 25.0
+      },
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "accuracy": 0.92,
+      "macro avg": {
+        "precision": 0.9217132505175983,
+        "recall": 0.9199999999999999,
+        "f1-score": 0.91965489025799,
+        "support": 100.0
+      },
+      "weighted avg": {
+        "precision": 0.9217132505175982,
+        "recall": 0.92,
+        "f1-score": 0.91965489025799,
+        "support": 100.0
+      }
+    }
+  },
+  "severity": {
+    "accuracy": 87.0,
+    "precision": 87.8,
+    "recall": 87.0,
+    "f1_score": 87.18,
+    "confusion_matrix": [
+      [
+        35,
+        3,
+        0
+      ],
+      [
+        7,
+        50,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "labels": [
+      "Mild",
+      "Moderate",
+      "Severe"
+    ],
+    "classification_report": {
+      "Mild": {
+        "precision": 0.8333333333333334,
+        "recall": 0.9210526315789473,
+        "f1-score": 0.875,
+        "support": 38.0
+      },
+      "Moderate": {
+        "precision": 0.9259259259259259,
+        "recall": 0.847457627118644,
+        "f1-score": 0.8849557522123894,
+        "support": 59.0
+      },
+      "Severe": {
+        "precision": 0.5,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.5714285714285714,
+        "support": 3.0
+      },
+      "accuracy": 0.87,
+      "macro avg": {
+        "precision": 0.7530864197530865,
+        "recall": 0.8117256417880859,
+        "f1-score": 0.7771281078803204,
+        "support": 100.0
+      },
+      "weighted avg": {
+        "precision": 0.8779629629629631,
+        "recall": 0.87,
+        "f1-score": 0.8717667509481669,
+        "support": 100.0
+      }
+    }
+  },
+  "treatment": {
+    "accuracy": 92.0,
+    "precision": 92.17,
+    "recall": 92.0,
+    "f1_score": 91.97,
+    "confusion_matrix": [
+      [
+        21,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        25,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        22,
+        2
+      ],
+      [
+        1,
+        0,
+        0,
+        24
+      ]
+    ],
+    "labels": [
+      "CBT & Mindfulness",
+      "Healthy Lifestyle",
+      "Psychotherapy & SSRIs",
+      "Rest & Therapy"
+    ],
+    "classification_report": {
+      "CBT & Mindfulness": {
+        "precision": 0.9130434782608695,
+        "recall": 0.84,
+        "f1-score": 0.875,
+        "support": 25.0
+      },
+      "Healthy Lifestyle": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "Psychotherapy & SSRIs": {
+        "precision": 0.9166666666666666,
+        "recall": 0.88,
+        "f1-score": 0.8979591836734694,
+        "support": 25.0
+      },
+      "Rest & Therapy": {
+        "precision": 0.8571428571428571,
+        "recall": 0.96,
+        "f1-score": 0.9056603773584906,
+        "support": 25.0
+      },
+      "accuracy": 0.92,
+      "macro avg": {
+        "precision": 0.9217132505175983,
+        "recall": 0.9199999999999999,
+        "f1-score": 0.91965489025799,
+        "support": 100.0
+      },
+      "weighted avg": {
+        "precision": 0.9217132505175983,
+        "recall": 0.92,
+        "f1-score": 0.91965489025799,
+        "support": 100.0
+      }
+    }
+  }
+}
