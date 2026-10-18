@@ -44,8 +44,12 @@ of the deployed frontend, for example `https://your-frontend.onrender.com`.
 The saved model artifacts are loaded at startup; deployment fails if any
 required artifact is missing.
 
-After deploying, set the frontend's `VITE_API_BASE_URL` to the Render backend
-URL and redeploy the frontend.
+The frontend is configured to use
+`https://mental-health-prediction-q2fa.onrender.com` by default. In Vercel, you
+can also set `VITE_API_BASE_URL` to that URL in the frontend project's
+Environment Variables and redeploy. Set the Render service's `CORS_ORIGINS` to
+the exact Vercel frontend origin (including `https://`) so browser requests are
+allowed.
 
 ## Prediction API
 
