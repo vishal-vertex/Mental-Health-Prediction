@@ -44,9 +44,9 @@ export default function Home() {
               description="Your data is processed confidentially. We don't store your personal assessment data on our servers."
             />
             <FeatureCard
-              icon="✨"
-              title="AI Wellness Companion"
-              description="Receive highly personalized, empathetic wellness recommendations powered by Google's Gemini AI."
+              icon="📊"
+              title="Clear Predictions"
+              description="Review the predicted condition, severity, treatment category, and model confidence in one concise result."
             />
           </div>
         </div>

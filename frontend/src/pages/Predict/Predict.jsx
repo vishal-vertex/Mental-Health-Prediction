@@ -5,7 +5,6 @@ import { usePredictionHistory } from '../../hooks/usePredictionHistory';
 import { downloadPDF, printReport, shareReport } from '../../utils/pdfExport';
 import PredictionForm from '../../components/PredictionForm/PredictionForm';
 import ResultCard from '../../components/ResultCard/ResultCard';
-import RecommendationCard from '../../components/RecommendationCard/RecommendationCard';
 import Loading from '../../components/Loading/Loading';
 import './Predict.css';
 
@@ -61,7 +60,7 @@ export default function Predict() {
         </header>
 
         {loading ? (
-          <Loading text="Our AI is analyzing your profile..." />
+          <Loading text="The Random Forest models are analyzing your profile..." />
         ) : (
           <PredictionForm
             formData={formData}
@@ -80,7 +79,7 @@ export default function Predict() {
             <div className="dashboard-header">
               <h2 className="section-title">Assessment Results</h2>
               <div className="dashboard-actions">
-                <button className="btn btn-secondary btn-sm" onClick={() => downloadPDF(result, formData)}>
+                <button className="btn btn-secondary btn-sm" onClick={() => downloadPDF(result)}>
                   Download PDF
                 </button>
                 <button className="btn btn-secondary btn-sm" onClick={() => printReport(result)}>
@@ -95,17 +94,7 @@ export default function Predict() {
               </div>
             </div>
 
-            <div className="dashboard-grid">
-              <div className="dashboard-grid__left">
-                <ResultCard result={result} />
-              </div>
-              <div className="dashboard-grid__right">
-                <RecommendationCard
-                  recommendations={result.recommendations}
-                  aiSuggestion={result.gemini_suggestion}
-                />
-              </div>
-            </div>
+            <ResultCard result={result} />
           </div>
         )}
       </div>

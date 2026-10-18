@@ -1,6 +1,6 @@
 """
 Inference utilities — load saved models once and run predictions.
-This module is imported by prediction_service.py only.
+This module is imported by app.py.
 Models are never re-trained here.
 """
 import json
@@ -56,7 +56,7 @@ class ModelRegistry:
             logger.info("All models loaded successfully from %s", models_dir)
         except FileNotFoundError as exc:
             raise RuntimeError(
-                f"Model artifacts not found. Run `python models/train_model.py` first.\n{exc}"
+                f"Required saved model artifacts were not found in {models_dir}.\n{exc}"
             ) from exc
 
     def is_loaded(self) -> bool:
@@ -104,5 +104,5 @@ class ModelRegistry:
         }
 
 
-# Singleton — imported by prediction_service
+# Singleton — shared by the API app.
 registry = ModelRegistry()

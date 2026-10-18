@@ -6,7 +6,7 @@ import jsPDF from 'jspdf';
 /**
  * Generate and download a PDF report.
  */
-export const downloadPDF = (result, formData) => {
+export const downloadPDF = (result) => {
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
   const pageW = doc.internal.pageSize.getWidth();
   const margin = 20;
@@ -69,40 +69,6 @@ export const downloadPDF = (result, formData) => {
 
   line();
 
-  // Recommendations
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(13);
-  doc.setTextColor(30, 30, 30);
-  doc.text('Wellness Recommendations', margin, y);
-  y += 4;
-  line();
-
-  result.recommendations.forEach((rec, i) => {
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(10);
-    doc.setTextColor(50, 50, 50);
-    const lines = doc.splitTextToSize(`${i + 1}. ${rec}`, pageW - margin * 2);
-    doc.text(lines, margin, y);
-    y += lines.length * 6 + 3;
-  });
-
-  // AI Suggestion
-  if (result.gemini_suggestion) {
-    y += 4;
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(13);
-    doc.setTextColor(30, 30, 30);
-    doc.text('AI Wellness Suggestion', margin, y);
-    y += 4;
-    line();
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(10);
-    doc.setTextColor(50, 50, 50);
-    const aiLines = doc.splitTextToSize(result.gemini_suggestion, pageW - margin * 2);
-    doc.text(aiLines, margin, y);
-    y += aiLines.length * 6;
-  }
-
   // Footer
   const pageH = doc.internal.pageSize.getHeight();
   doc.setFont('helvetica', 'italic');
@@ -159,7 +125,6 @@ export const shareReport = async (result) => {
 
 function buildTextReport(result) {
   const date = new Date().toLocaleString();
-  const recs = result.recommendations?.map((r, i) => `  ${i + 1}. ${r}`).join('\n') || '';
   return `
 AI MENTAL HEALTH PREDICTION REPORT
 Generated: ${date}
@@ -173,16 +138,8 @@ Confidence:      ${result.confidence}%
 Treatment:       ${result.treatment}
 Prediction Time: ${result.prediction_time}
 
-RECOMMENDATIONS
----------------
-${recs}
-
-AI WELLNESS SUGGESTION
-----------------------
-${result.gemini_suggestion || 'N/A'}
-
 --------------------------------------------------
-DISCLAIMER: This report is for informational use only.
-Please consult a qualified mental health professional.
+DISCLAIMER: This report is for informational use only,
+not a medical diagnosis or treatment recommendation.
 `.trim();
 }

@@ -46,17 +46,4 @@ export const getModelInfo = async () => {
   return response.data.data;
 };
 
-/**
- * Get wellness recommendations for a condition/severity.
- * @param {string} condition
- * @param {string} severity
- * @returns {Promise<Object>}
- */
-export const getRecommendations = async (condition, severity) => {
-  const response = await apiClient.get('/api/recommendations', {
-    params: { condition, severity },
-  });
-  return response.data.data;
-};
-
 export default apiClient;

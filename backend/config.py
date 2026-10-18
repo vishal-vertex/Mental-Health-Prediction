@@ -19,12 +19,8 @@ class Config:
         "CORS_ORIGINS", "http://localhost:5173"
     ).split(",")
 
-    # Gemini
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-
     # Paths
     BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))
-    DATASET_PATH: str = os.path.join(BASE_DIR, "dataset", "mental_health_prediction.csv")
     MODELS_DIR: str = os.path.join(BASE_DIR, "models")
 
     # Model artifact file names

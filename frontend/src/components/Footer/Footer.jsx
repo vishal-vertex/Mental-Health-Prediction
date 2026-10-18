@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="footer__logo-text">Mind<span className="gradient-text">AI</span></span>
           </NavLink>
           <p className="footer__desc">
-            An advanced AI-powered system for preliminary mental health assessment and personalised wellness recommendations.
+            A machine-learning project for preliminary mental health assessment. Its predictions are not a medical diagnosis.
           </p>
         </div>
         <div className="footer__links">
