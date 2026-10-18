@@ -12,12 +12,16 @@ class Config:
 
     # Flask
     DEBUG: bool = os.getenv("FLASK_DEBUG", "false").lower() == "true"
-    PORT: int = int(os.getenv("FLASK_PORT", 5000))
+    PORT: int = int(os.getenv("PORT", os.getenv("FLASK_PORT", 5000)))
 
     # CORS
-    CORS_ORIGINS: list[str] = os.getenv(
-        "CORS_ORIGINS", "http://localhost:5173"
-    ).split(",")
+    CORS_ORIGINS: list[str] = [
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS", "http://localhost:5173"
+        ).split(",")
+        if origin.strip()
+    ]
 
     # Paths
     BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))

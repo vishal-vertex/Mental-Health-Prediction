@@ -122,11 +122,7 @@ def create_app(cfg: Config = None) -> Flask:
     app.config.from_object(cfg)
     CORS(app, origins=cfg.CORS_ORIGINS, supports_credentials=True)
 
-    try:
-        model_registry.load(cfg.MODELS_DIR, cfg)
-    except RuntimeError as exc:
-        logger.error("%s", exc)
-        logger.error("Prediction endpoints will be unavailable until models are trained.")
+    model_registry.load(cfg.MODELS_DIR, cfg)
 
     @app.route("/", methods=["GET"])
     def health_check():

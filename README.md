@@ -30,9 +30,22 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-The saved model artifacts are included. The server reads `FLASK_PORT`,
-`FLASK_DEBUG`, and `CORS_ORIGINS` from the environment; see
-`backend/.env.example`.
+The saved model artifacts are included. The server reads Render's `PORT`
+variable, falling back to `FLASK_PORT` locally, as well as `FLASK_DEBUG` and
+`CORS_ORIGINS`.
+
+## Deploy the backend to Render
+
+The root `render.yaml` configures a Python web service with `backend/` as its
+root, installs `backend/requirements.txt`, starts Gunicorn on Render's assigned
+port, and checks `/` for service health. Deploy the repository as a Render
+Blueprint and provide `CORS_ORIGINS` when prompted. Set it to the exact origin
+of the deployed frontend, for example `https://your-frontend.onrender.com`.
+The saved model artifacts are loaded at startup; deployment fails if any
+required artifact is missing.
+
+After deploying, set the frontend's `VITE_API_BASE_URL` to the Render backend
+URL and redeploy the frontend.
 
 ## Prediction API
 
